@@ -1,0 +1,14 @@
+nav {
+  max-width: 90vw;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+}
