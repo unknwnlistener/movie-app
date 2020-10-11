@@ -1,1 +1,11 @@
+.cards-container-wrapper {
+  width: inherit;
+  /* display: flex; */
+  /* justify-content: center; */
+  padding: 2em 0;
+}
 
+.list-title {
+  font-size: 2em;
+  font-weight: 300;
+}

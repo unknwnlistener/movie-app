@@ -1,12 +1,28 @@
 .cards-container {
+  width: 1000px;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-flow: row wrap;
 }
 
 .card-details {
-  border: 1px solid black;
+  flex-basis: 21%;
+  background-color: #233a6c;
   display: block;
-  width: 200px;
-  padding: 0 1em;
+  max-width: 200px;
+  margin: 0 1em 1em 0;
+  padding: 0 0 1em 0;
+  border-radius: 5px;
+}
+
+.card-details > * {
+  margin: 0;
+  padding: 0;
+}
+
+.card-details > img {
+  border-radius: 5px 5px 0 0;
+}
+
+.card-details > p {
+  padding: 0 0.5em;
 }

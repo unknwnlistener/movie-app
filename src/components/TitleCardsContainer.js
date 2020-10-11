@@ -11,6 +11,7 @@ export const TitleCardsContainer = () => {
 
   return (
     <div className="cards-container-wrapper">
+      <h1 className="list-title">Discover Movies</h1>
       <div className="cards-container">
         {cards
           ? cards.map((card) => <Card key={card.id} cardDetails={card}></Card>)
