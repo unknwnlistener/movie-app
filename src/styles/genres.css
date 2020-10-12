@@ -1,0 +1,16 @@
+.genre-list {
+  display: none;
+  background-color: rgb(100, 100, 100);
+  position: absolute;
+  left: 234px;
+  margin-top: -45px;
+  padding: 1em;
+  grid-template-columns: 150px 150px 150px 150px;
+  grid-template-rows: auto;
+  column-gap: 0.5em;
+  row-gap: 1em;
+}
+
+.genre-list .genre-item {
+  color: ghostwhite;
+}

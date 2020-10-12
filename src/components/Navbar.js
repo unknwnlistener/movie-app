@@ -4,7 +4,6 @@ export const Navbar = () => {
   return (
     <nav>
       <div className="navbar">
-        <div className="logo">Logo</div>
         <form className="search-bar">
           <div className="search-icon">
             <i className="fa fa-search"></i>
@@ -14,10 +13,6 @@ export const Navbar = () => {
             <i className="fa fa-arrow-right"></i>
           </button>
         </form>
-        <div className="menu-items">
-          <p>Home</p>
-          <p>Genres</p>
-        </div>
       </div>
     </nav>
   );

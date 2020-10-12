@@ -1,0 +1,40 @@
+.sidebar {
+  position: relative;
+  width: 250px;
+  background-color: rgb(68, 68, 68);
+}
+
+.sidebar .logo {
+  height: 3em;
+  background-color: rgb(255, 102, 0);
+  padding: 1em;
+}
+
+.sidebar .list-items {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  margin-left: 1em;
+}
+
+.sidebar .list-items .item > button {
+  text-transform: capitalize;
+  margin-top: 1em;
+  padding: 1em;
+  cursor: pointer;
+}
+
+.sidebar .list-items .genres > button {
+  width: 100%;
+  background-color: inherit;
+  font-family: inherit;
+  border: 0;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 1em;
+  color: inherit;
+}
+
+.sidebar .list-items .genres:hover > .genre-list {
+  display: grid;
+}

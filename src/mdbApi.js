@@ -7,12 +7,13 @@ const constructUrl = (path, params = {}) => {
   let newPath = `${tmdbBaseUrl}${path}?api_key=${apiKey}`;
 
   for (let key in params) {
-    newPath += `${key}=${params[key]}`;
+    newPath += `&${key}=${params[key]}`;
   }
   return newPath;
 };
 
 const discoverMovieUrl = constructUrl("/discover/movie");
+const genreListUrl = constructUrl("/genre/movie/list", { language: "en-US" });
 
 const getMovieListAsync = async (url) => {
   const request = await fetch(url);
@@ -26,4 +27,8 @@ export const getDiscoverMovieListAsync = async () => {
 
 export const getPosterPath = (url) => {
   return `${posterBaseUrl}/${url}?api_key=${apiKey}`;
+};
+
+export const getGenreListAsync = async () => {
+  return await getMovieListAsync(genreListUrl);
 };

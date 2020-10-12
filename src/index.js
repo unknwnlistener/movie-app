@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.css";
+import "./styles/sidebar.css";
+import "./styles/genres.css";
+import "./styles/cards-container.css";
 import "./styles/navbar.css";
-import "./styles/maincontent.css";
 import "./styles/card.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";

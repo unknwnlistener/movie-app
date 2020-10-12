@@ -60,13 +60,3 @@ nav {
   cursor: pointer;
   font-size: 1.05em;
 }
-
-.navbar .menu-items {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.navbar .menu-items > p {
-  margin: 0 1em;
-}
