@@ -1,20 +1,29 @@
 import React from "react";
-import { searchMovie } from "../utils/mdbApi";
 import "../styles/navbar.css";
 
-export const Navbar = () => {
+export const Navbar = ({ search, setSearch, submitSearch }) => {
+  const updateSearch = (e) => {
+    setSearch(e.target.value);
+  };
+
   return (
     <nav>
       <div className="navbar">
-        <form className="search-bar">
+        <div className="search-bar">
           <div className="search-icon">
             <i className="fa fa-search"></i>
           </div>
-          <input type="text" placeholder="Search movies" autoComplete="off" />
-          <button className="search-submit" type="submit">
+          <input
+            value={search}
+            type="text"
+            placeholder="Search movies"
+            autoComplete="off"
+            onChange={(e) => updateSearch(e)}
+          />
+          <button onClick={() => submitSearch()} className="search-submit">
             <i className="fa fa-arrow-right"></i>
           </button>
-        </form>
+        </div>
       </div>
     </nav>
   );

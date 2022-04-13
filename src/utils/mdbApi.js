@@ -21,11 +21,6 @@ const getDataAsync = async (url) => {
   return data;
 };
 
-const getData = (url) => {
-  const request = fetch(url);
-  return request.json();
-};
-
 export const getDiscoverMovieListAsync = async () => {
   return await getDataAsync(discoverMovieUrl);
 };
@@ -38,6 +33,6 @@ export const getGenreListAsync = async () => {
   return await getDataAsync(genreListUrl);
 };
 
-export const searchMovie = (queryString) => {
-  return getData(constructUrl("/search/movie", { query: queryString }));
+export const searchMovieAsync = async (queryString) => {
+  return getDataAsync(constructUrl("/search/movie", { query: queryString }));
 };

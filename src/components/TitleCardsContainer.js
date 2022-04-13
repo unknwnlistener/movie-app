@@ -1,18 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Card } from "./Card";
 import { getDiscoverMovieListAsync } from "../utils/mdbApi";
 import "../styles/cards-container.css";
 
-export const TitleCardsContainer = () => {
+export const TitleCardsContainer = ({ searchResults }) => {
   const [cards, setCards] = useState([]);
+  let discoverList = useRef([]);
 
   useEffect(() => {
-    getDiscoverMovieListAsync().then((data) => setCards(data.results));
+    getDiscoverMovieListAsync().then((data) => {
+      discoverList.current = data.results;
+      setCards(data.results);
+    });
   }, []);
+
+  useEffect(() => {
+    if (searchResults.length === 0) {
+      setCards(discoverList.current);
+    } else {
+      setCards(searchResults);
+    }
+  }, [searchResults]);
 
   return (
     <div className="cards-container-wrapper">
-      <h1 className="list-title">Discover Movies</h1>
+      <h1 className="list-title">
+        {searchResults.length !== 0 ? "Searched" : "Discover"} Movies
+      </h1>
       <div className="cards-container">
         {cards
           ? cards.map((card) => <Card key={card.id} cardDetails={card}></Card>)
