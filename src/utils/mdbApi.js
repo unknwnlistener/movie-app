@@ -15,14 +15,19 @@ const constructUrl = (path, params = {}) => {
 const discoverMovieUrl = constructUrl("/discover/movie");
 const genreListUrl = constructUrl("/genre/movie/list", { language: "en-US" });
 
-const getMovieListAsync = async (url) => {
+const getDataAsync = async (url) => {
   const request = await fetch(url);
   const data = await request.json();
   return data;
 };
 
+const getData = (url) => {
+  const request = fetch(url);
+  return request.json();
+};
+
 export const getDiscoverMovieListAsync = async () => {
-  return await getMovieListAsync(discoverMovieUrl);
+  return await getDataAsync(discoverMovieUrl);
 };
 
 export const getPosterPath = (url) => {
@@ -30,5 +35,9 @@ export const getPosterPath = (url) => {
 };
 
 export const getGenreListAsync = async () => {
-  return await getMovieListAsync(genreListUrl);
+  return await getDataAsync(genreListUrl);
+};
+
+export const searchMovie = (queryString) => {
+  return getData(constructUrl("/search/movie", { query: queryString }));
 };

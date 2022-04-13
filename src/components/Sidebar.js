@@ -1,6 +1,8 @@
 import React from "react";
-import { getGenreListAsync } from "../mdbApi";
+import { getGenreListAsync } from "../utils/mdbApi";
 import { GenreList } from "./GenreList";
+import Logo from "../logo.svg";
+import "../styles/sidebar.css";
 
 export const Sidebar = () => {
   const [genreList, setGenreList] = React.useState([]);
@@ -21,7 +23,9 @@ export const Sidebar = () => {
 
   return (
     <div className="sidebar">
-      <div className="logo">Logo</div>
+      <div className="logo">
+        <img src={Logo} alt="Moovie logo"></img>
+      </div>
       <div className="list-items">
         <div className="item genres">
           <button>genres</button>

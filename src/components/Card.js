@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { getPosterPath } from "../mdbApi";
+import { getPosterPath } from "../utils/mdbApi";
+import "../styles/card.css";
 
 export const Card = ({ cardDetails }) => {
   //   return <p className="card-details">{JSON.stringify(cardDetails)}</p>;

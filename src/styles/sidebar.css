@@ -5,10 +5,11 @@
 }
 
 .sidebar .logo {
-  height: 3em;
   background-color: rgb(255, 102, 0);
   padding: 1em;
+  position: relative;
 }
+
 
 .sidebar .list-items {
   position: relative;

@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/genres.css";
 
 export const GenreList = ({ genres }) => {
   // console.log(genres);

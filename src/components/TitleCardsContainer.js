@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card } from "./Card";
-import { getDiscoverMovieListAsync } from "../mdbApi";
+import { getDiscoverMovieListAsync } from "../utils/mdbApi";
+import "../styles/cards-container.css";
 
 export const TitleCardsContainer = () => {
   const [cards, setCards] = useState([]);

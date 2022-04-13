@@ -3,6 +3,13 @@
 :root {
   --background-primary: #121620;
   --background-secondary: #001233;
+  --primary-clr: #F8680C;
+  --secondary-clr: #E7E7E6;
+  --tertiary-clr: #fbfbfa;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 body {

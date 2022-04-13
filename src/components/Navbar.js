@@ -1,4 +1,6 @@
 import React from "react";
+import { searchMovie } from "../utils/mdbApi";
+import "../styles/navbar.css";
 
 export const Navbar = () => {
   return (
