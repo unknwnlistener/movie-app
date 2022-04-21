@@ -10,8 +10,16 @@
   column-gap: 0.5em;
   row-gap: 1em;
   z-index: 99;
+  border-radius: 0 1rem 1rem 0;
 }
 
 .genre-list .genre-item {
-  color: ghostwhite;
+  color: var(--secondary-clr);
+  padding: 0.5rem;
+  border: 1px solid var(--background-secondary);
+}
+
+.genre-list .genre-item:hover {
+  background-color: var(--secondary-clr);;
+  color: var(--background-secondary);
 }

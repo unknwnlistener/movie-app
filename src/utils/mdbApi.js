@@ -4,16 +4,21 @@ const posterBaseUrl = "https://image.tmdb.org/t/p/w200";
 const apiKey = "1ea6bf4e9185a53fe20228a52ea46bf1";
 
 const constructUrl = (path, params = {}) => {
+  if (path.slice(0) !== "/") {
+    path = "/" + path;
+  }
   let newPath = `${tmdbBaseUrl}${path}?api_key=${apiKey}`;
 
   for (let key in params) {
-    newPath += `&${key}=${params[key]}`;
+    if (key !== undefined || params !== undefined)
+      newPath += `&${key}=${params[key]}`;
   }
+  console.log(newPath);
   return newPath;
 };
 
-const discoverMovieUrl = constructUrl("/discover/movie");
-const genreListUrl = constructUrl("/genre/movie/list", { language: "en-US" });
+const discoverMoviePath = constructUrl("/discover/movie");
+const genreListPath = constructUrl("/genre/movie/list", { language: "en-US" });
 
 const getDataAsync = async (url) => {
   const request = await fetch(url);
@@ -21,8 +26,10 @@ const getDataAsync = async (url) => {
   return data;
 };
 
-export const getDiscoverMovieListAsync = async () => {
-  return await getDataAsync(discoverMovieUrl);
+export const getDiscoverMovieListAsync = async (genre = undefined) => {
+  return await getDataAsync(
+    constructUrl("discover/movie", { with_genres: genre })
+  );
 };
 
 export const getPosterPath = (url) => {
@@ -30,7 +37,7 @@ export const getPosterPath = (url) => {
 };
 
 export const getGenreListAsync = async () => {
-  return await getDataAsync(genreListUrl);
+  return await getDataAsync(genreListPath);
 };
 
 export const searchMovieAsync = async (queryString) => {

@@ -3,7 +3,7 @@ import { Card } from "./Card";
 import { getDiscoverMovieListAsync } from "../utils/mdbApi";
 import "../styles/cards-container.css";
 
-export const TitleCardsContainer = ({ searchResults }) => {
+export const TitleCardsContainer = ({ searchResults, genreSelect }) => {
   const [cards, setCards] = useState([]);
   let discoverList = useRef([]);
 
@@ -13,6 +13,15 @@ export const TitleCardsContainer = ({ searchResults }) => {
       setCards(data.results);
     });
   }, []);
+
+  useEffect(() => {
+    getDiscoverMovieListAsync(genreSelect).then((data) => {
+      if (data.results.length !== 0) {
+        discoverList.current = data.results;
+        setCards(data.results);
+      }
+    });
+  }, [genreSelect]);
 
   useEffect(() => {
     if (searchResults.length === 0) {

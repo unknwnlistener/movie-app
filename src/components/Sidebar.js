@@ -4,9 +4,8 @@ import { GenreList } from "./GenreList";
 import Logo from "../logo.svg";
 import "../styles/sidebar.css";
 
-export const Sidebar = () => {
+export const Sidebar = ({ setGenre }) => {
   const [genreList, setGenreList] = React.useState([]);
-  const [showGenre, setShowGenre] = React.useState(false);
   React.useEffect(() => {
     getGenreListAsync().then((data) => {
       setGenreList(data.genres);
@@ -29,7 +28,7 @@ export const Sidebar = () => {
       <div className="list-items">
         <div className="item genres">
           <button>genres</button>
-          <GenreList genres={genreList}></GenreList>
+          <GenreList setGenre={setGenre} genres={genreList}></GenreList>
         </div>
       </div>
     </div>

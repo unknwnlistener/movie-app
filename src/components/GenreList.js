@@ -1,14 +1,21 @@
 import React from "react";
 import "../styles/genres.css";
 
-export const GenreList = ({ genres }) => {
+export const GenreList = ({ genres, setGenre }) => {
+  const updateGenre = (id) => {
+    setGenre(id);
+  };
   // console.log(genres);
   return (
     <div className="genre-list">
       {genres.map((genre) => (
-        <span key={genre.id} className="genre-item">
+        <div
+          key={genre.id}
+          className="genre-item"
+          onClick={() => updateGenre(genre.id)}
+        >
           {genre.name}
-        </span>
+        </div>
       ))}
     </div>
   );
