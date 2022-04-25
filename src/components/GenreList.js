@@ -1,9 +1,13 @@
 import React from "react";
 import "../styles/genres.css";
 
-export const GenreList = ({ genres, setGenre }) => {
+export const GenreList = ({ genres, setSelectedGenres, selectedGenres }) => {
   const updateGenre = (id) => {
-    setGenre(id);
+    if (selectedGenres.includes(id)) {
+      setSelectedGenres(selectedGenres.filter((v) => v !== id));
+    } else {
+      setSelectedGenres([...selectedGenres, id]);
+    }
   };
   // console.log(genres);
   return (

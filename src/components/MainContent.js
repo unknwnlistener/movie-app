@@ -9,7 +9,7 @@ import "../styles/index.css";
 export const MainContent = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setResults] = useState([]);
-  const [genreSelect, setGenre] = useState("");
+  const [selectedGenres, setSelectedGenres] = useState([]);
 
   const submitSearch = () => {
     if (searchQuery !== "") {
@@ -21,7 +21,10 @@ export const MainContent = () => {
   };
   return (
     <div className="container">
-      <Sidebar setGenre={setGenre}></Sidebar>
+      <Sidebar
+        setSelectedGenres={setSelectedGenres}
+        selectedGenres={selectedGenres}
+      ></Sidebar>
       <div className="content-wrapper">
         <Navbar
           setSearch={setSearchQuery}
@@ -29,7 +32,7 @@ export const MainContent = () => {
           submitSearch={submitSearch}
         ></Navbar>
         <TitleCardsContainer
-          genreSelect={genreSelect}
+          selectedGenres={selectedGenres}
           searchResults={searchResults}
         ></TitleCardsContainer>
       </div>

@@ -26,9 +26,9 @@ const getDataAsync = async (url) => {
   return data;
 };
 
-export const getDiscoverMovieListAsync = async (genre = undefined) => {
+export const getDiscoverMovieListAsync = async (genre = []) => {
   return await getDataAsync(
-    constructUrl("discover/movie", { with_genres: genre })
+    constructUrl("discover/movie", { with_genres: [...genre].join() })
   );
 };
 
