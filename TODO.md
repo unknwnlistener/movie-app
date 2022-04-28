@@ -2,13 +2,13 @@
 
 | Done? | Status            | Task                                         | Priority | Approx. time |
 | ----- | ----------------- | -------------------------------------------- | -------- | ------------ |
-| - [ ] | New               | Update the movie listing based on Genre      | High🔥   | 1hr          |
+| - [ ] | New               | Search section in form                       | High🌤️   | 1.5hr        |
+| - [ ] | New               | Show selected Genres as pills                | Medium🌤️ | 1.5hr        |
 | - [ ] | New               | Add pagination for movie listing             | Medium🌤️ | 2hr          |
 | - [ ] | New               | On click of movie card show popup of details | Medium🌤️ | 2hr          |
 | - [ ] | New               | Cards made into display:grid                 | Low❄️    | 1.5hr        |
 | - [ ] | New               | Make website responsive                      | Low❄️    | 2hr          |
-| - [ ] | New               | Show selected Genres as pills                | Medium🌤️ | 1.5hr        |
-| - [ ] | New               | Search section in form                       | Medium🌤️ | 1.5hr        |
+| - [x] | Done              | Update the movie listing based on Genre      | High🔥   | 1hr          |
 | - [x] | Done              | clear Genre update                           | High🔥   | 0.5hr        |
 | - [x] | Created new issue | Genre links need to be clickable             | High🔥   | 0.5hr        |
 | - [x] | Done              | Add functionality to search bar              | High🔥   | 1.5hr        |

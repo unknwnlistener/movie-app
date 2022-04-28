@@ -7,6 +7,7 @@ import "../styles/cards-container.css";
 export const TitleCardsContainer = ({ searchResults, selectedGenres }) => {
   const [cards, setCards] = useState([]);
   let discoverList = useRef([]);
+  // console.log("[TitleCardsContainer] Selected genres: ", selectedGenres);
 
   useEffect(() => {
     getDiscoverMovieListAsync().then((data) => {
@@ -16,7 +17,8 @@ export const TitleCardsContainer = ({ searchResults, selectedGenres }) => {
   }, []);
 
   useEffect(() => {
-    getDiscoverMovieListAsync(selectedGenres).then((data) => {
+    let selectGenreIds = selectedGenres.map((selectG) => selectG.id);
+    getDiscoverMovieListAsync(selectGenreIds).then((data) => {
       if (data.results.length !== 0) {
         discoverList.current = data.results;
         setCards(data.results);
@@ -35,7 +37,9 @@ export const TitleCardsContainer = ({ searchResults, selectedGenres }) => {
   return (
     <>
       <span className="genre-pills-active">
-        <GenrePills selectedGenres={selectedGenres}></GenrePills>
+        <GenrePills
+          selectedGenreNames={selectedGenres.map((selectG) => selectG.name)}
+        ></GenrePills>
       </span>
       <div className="cards-container-wrapper">
         <h1 className="list-title">

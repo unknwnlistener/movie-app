@@ -1,11 +1,11 @@
 import React from "react";
 
-export const GenrePills = ({ selectedGenres }) => {
+export const GenrePills = ({ selectedGenreNames }) => {
   return (
     <div>
-      {selectedGenres.length !== 0 ? <h3>Current Genres</h3> : ""}
-      {selectedGenres.map((v) => {
-        return <span className="genre-pill">{v}</span>;
+      {selectedGenreNames.length !== 0 ? <h3>Current Genres</h3> : ""}
+      {selectedGenreNames.map((genreName) => {
+        return <span className="genre-pill">{genreName}</span>;
       })}
     </div>
   );

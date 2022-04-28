@@ -2,21 +2,23 @@ import React from "react";
 import "../styles/genres.css";
 
 export const GenreList = ({ genres, setSelectedGenres, selectedGenres }) => {
-  const updateGenre = (id) => {
-    if (selectedGenres.includes(id)) {
-      setSelectedGenres(selectedGenres.filter((v) => v !== id));
+  const updateGenre = (genre) => {
+    if (selectedGenres.some((selectedG) => selectedG.id === genre.id)) {
+      setSelectedGenres(selectedGenres.filter((v) => v.id !== genre.id));
     } else {
-      setSelectedGenres([...selectedGenres, id]);
+      setSelectedGenres([
+        ...selectedGenres,
+        { id: genre.id, name: genre.name },
+      ]);
     }
   };
-  // console.log(genres);
   return (
     <div className="genre-list">
       {genres.map((genre) => (
         <div
           key={genre.id}
           className="genre-item"
-          onClick={() => updateGenre(genre.id)}
+          onClick={() => updateGenre(genre)}
         >
           {genre.name}
         </div>
